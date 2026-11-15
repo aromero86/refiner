@@ -323,7 +323,7 @@ pantalla entera y no hay nada que dimensionar.
 
 | Clave | Default | Qué hace |
 |-------|---------|----------|
-| `theme` | `"gruvbox-dark"` | Paleta base: `"gruvbox-dark"`, `"gruvbox-light"` o `"vesper"`. Un nombre que no existe se ignora y arranca con el default. Lo que elijas con `t` manda sobre esta clave |
+| `theme` | `"gruvbox-dark"` | Paleta base: `"gruvbox-dark"`, `"gruvbox-dark-hard"`, `"gruvbox-light"` o `"vesper"`. Un nombre que no existe se ignora y arranca con el default. Lo que elijas con `t` manda sobre esta clave |
 
 **Paleta** — se aplica encima del tema; los nombres describen el ROL, no el color
 (los defaults de la tabla son los de `gruvbox-dark`):
@@ -385,6 +385,7 @@ que un emoji de 2 celdas no descuadra los nombres.
 | Nombre | Qué es |
 |--------|--------|
 | `gruvbox-dark` | El default: cálido, poco contraste, oscuro |
+| `gruvbox-dark-hard` | El mismo sobre el bg0 *hard* (`#1d2021`), el que traen kitty, alacritty y la mayoría de ports de terminal |
 | `gruvbox-light` | La misma paleta sobre papel, para sitios con luz |
 | `vesper` | Casi monocromo oscuro, con naranja y menta como únicos acentos |
 

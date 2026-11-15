@@ -178,6 +178,11 @@ export class View {
     const ctx = this.renderer
     const root = this.renderer.root
     root.flexDirection = 'column'
+    // The rows outside the panes — header, rules, titles — have no box fill of
+    // their own, so without a clear color they show the TERMINAL's background
+    // while the panes show the theme's: two backgrounds on one screen whenever
+    // the two differ by a shade. Every cell gets the theme's instead.
+    this.renderer.setBackgroundColor(S.palette.background)
 
     // No box around the header: a border would spend two more rows restating
     // what the row inside it already says. Same for the panes below — the whole
@@ -355,6 +360,7 @@ export class View {
    */
   private applyPalette(): void {
     const p = S.palette
+    this.renderer.setBackgroundColor(p.background)
     for (const box of [this.treeBox, this.ruleBox, this.contentBox]) {
       box.backgroundColor = p.background
     }

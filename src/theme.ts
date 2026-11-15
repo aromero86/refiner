@@ -141,6 +141,11 @@ export const BUILTIN_THEMES: readonly ThemeEntry[] = [
     build: gruvboxDark,
   },
   {
+    name: 'gruvbox-dark-hard',
+    about: 'gruvbox dark on the hard bg0 (#1d2021) most terminal ports ship',
+    build: gruvboxDarkHard,
+  },
+  {
     name: 'gruvbox-light',
     about: 'the same palette on paper, for bright rooms',
     build: gruvboxLight,
@@ -246,6 +251,45 @@ function gruvboxDark(): Theme {
  * of the same green/red/blue instead, light enough that the faded syntax colors
  * still read on top of them.
  */
+/**
+ * Gruvbox Dark, hard contrast. Same accents as the original; only the darks
+ * move one step down the ladder — bg0_h for the background, bg0 for the
+ * cursorline — because this is the background kitty's, alacritty's and most
+ * other terminals' "gruvbox dark" ports actually set. Running the medium theme
+ * on one of them paints the panes visibly lighter than the terminal around
+ * them.
+ *
+ * The diff washes are re-tinted from the darker base so they keep the same
+ * distance from the background, rather than reading as brighter blocks.
+ */
+function gruvboxDarkHard(): Theme {
+  return {
+    primary: '#fe8019', // bright orange
+    accent: '#fabd2f', // bright yellow
+    focus: '#8ec07c', // bright aqua
+    muted: '#7c6f64', // bg4
+    foreground: '#ebdbb2', // fg1
+
+    addBg: '#262a14',
+    delBg: '#371b1a',
+    addFg: '#b8bb26', // bright green
+    delFg: '#fb4934', // bright red
+    stagedBg: '#1a2633',
+    stagedFg: '#83a598', // bright blue
+
+    thread: '#3e2232', // dark plum — a background
+    threadLabel: '#fbf1c7', // fg0
+    threadMarker: '#d3869b', // bright purple
+
+    treeGuide: '#665c54', // bg3
+    cursorBg: '#32302f', // bg0_s — one step up from bg0_h
+    background: '#1d2021', // bg0_h
+
+    syntaxHighlight: true,
+    syntax: defaultSyntax(),
+  }
+}
+
 function gruvboxLight(): Theme {
   return {
     primary: '#af3a03', // faded orange
