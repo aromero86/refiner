@@ -284,7 +284,7 @@ headless layout gets plain blocks and spawns no parser worker.
 
 ## Themes
 
-`src/theme.ts` owns the built-in palettes (`BUILTIN_THEMES`: gruvbox-dark,
+`src/theme.ts` owns the built-in palettes (`BUILTIN_THEMES`: gruvbox-dark, gruvbox-dark-hard,
 gruvbox-light, vesper) and `t` swaps between them at runtime. Each entry is a
 WHOLE `Theme`, never a patch over the default — a light theme moves every knob,
 and `buildSyntax` expands eleven roles into the full capture-group table so a new

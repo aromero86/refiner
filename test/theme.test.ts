@@ -55,9 +55,10 @@ async function makeApp(): Promise<App> {
   return new App(SOURCE, await Store.load(join(dir, '.refiner', 'comments.json')))
 }
 
-test('the picker offers the three palettes, default first', () => {
+test('the picker offers the four palettes, default first', () => {
   expect(BUILTIN_THEMES.map((t) => t.name)).toEqual([
     'gruvbox-dark',
+    'gruvbox-dark-hard',
     'gruvbox-light',
     'vesper',
   ])
